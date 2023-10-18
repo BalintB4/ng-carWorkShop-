@@ -1,0 +1,9 @@
+<p>Meet Mr {{lastName}}</p>
+<p>It is {{mechanics.firstName }}, {{mechanics.lastName}}, {{mechanics.hireDate | date: 'yyyy-MM-dd'}}, {{getYearsSinceHired()}} years working here</p>
+<button class = "editbutton" (click)="toggleEditMode()">Edit</button>
+<div *ngIf = editmode >
+    <input type="text" [(ngModel)]="mechanics.firstName">
+    <input type="text" [(ngModel)]="mechanics.lastName">
+    <input type="date"[valueAsDate]="mechanics.hireDate"(input)="hireDate=parseDate($event)">
+    
+</div>
